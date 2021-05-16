@@ -3,7 +3,6 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:Lalena.UI"
         mc:Ignorable="d"
         WindowStartupLocation="CenterScreen"
         WindowState="Maximized"
@@ -19,6 +18,7 @@
             <RowDefinition Height="2*"></RowDefinition>
             <RowDefinition Height="Auto"></RowDefinition>
             <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
             <RowDefinition Height="*"></RowDefinition>
             <RowDefinition Height="Auto"></RowDefinition>
             <RowDefinition Height="*"></RowDefinition>
@@ -26,8 +26,8 @@
 
         <TextBlock Name="Opgave" Grid.Column="1" Grid.Row="1" HorizontalAlignment="Right" TextAlignment="Right" Margin="5px" FontSize="100"></TextBlock>
         <TextBox Name="Resultaat" Grid.Column="2" Grid.Row="1" Width="300px" HorizontalAlignment="Left" Margin="5px" FontSize="100"></TextBox>
-        <TextBlock Name="Verbetering" Grid.Column="3" Grid.Row="1" HorizontalAlignment="Right" TextAlignment="Right" Margin="0 0 50 0" FontSize="100"></TextBlock>
-        <Button Name="CheckButton" IsDefault="True" Grid.Column="2" Grid.Row="2" HorizontalAlignment="Left" Margin="5px" Width="200px" Click="CheckButton_Click" FontSize="40">Volgende</Button>
-        <ProgressBar Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="4" Name="Progress" Height="40px" Margin="10px"></ProgressBar>
+        <TextBlock Name="Verbetering" Grid.Column="0" Grid.ColumnSpan="4" Grid.Row="2" HorizontalAlignment="Center" TextAlignment="Center" Margin="0 0 0 30" FontSize="80"></TextBlock>
+        <Button Name="CheckButton" IsDefault="True" Grid.Column="2" Grid.Row="3" HorizontalAlignment="Left" Margin="5px" Width="200px" Click="CheckButton_Click" FontSize="40">Volgende</Button>
+        <ProgressBar Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="4" Name="Progress" Height="40px" Margin="10px"></ProgressBar>
     </Grid>
 </Window>

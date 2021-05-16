@@ -1,4 +1,4 @@
-﻿namespace LalenasFirstProject
+﻿namespace Lalena.UI
 {
     public enum Bewerking
     {

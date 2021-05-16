@@ -7,7 +7,7 @@ namespace LalenasFirstProject
 {
     class Program
     {
-        static void Main(string[] args)
+        static void Main()
         {
             Clear();
             var bewerkingen = VraagBewerkingen().Distinct().ToList();

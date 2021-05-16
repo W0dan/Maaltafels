@@ -83,6 +83,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="DoubleExtensions.cs" />
     <Compile Include="Resultaat.xaml.cs">
       <DependentUpon>Resultaat.xaml</DependentUpon>
     </Compile>

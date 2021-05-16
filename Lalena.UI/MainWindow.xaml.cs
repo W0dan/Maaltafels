@@ -1,14 +1,14 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Windows;
-using LalenasFirstProject;
 
 namespace Lalena.UI
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class MainWindow
     {
         public MainWindow()
         {
@@ -19,8 +19,15 @@ namespace Lalena.UI
         {
             var dialog = new OneByOne();
 
-            var oefeningenLijst = new OefeningenLijst(GetBewerkingen(), GetMaaltafels().ToList());
-            dialog.ShowOneByOne(oefeningenLijst.GetAllOefeningen());
+            try
+            {
+                var oefeningenLijst = new OefeningenLijst(GetBewerkingen().ToList(), GetMaaltafels().ToList());
+                dialog.ShowOneByOne(oefeningenLijst.GetAllOefeningen());
+            }
+            catch (Exception exception)
+            {
+                MessageBox.Show(exception.Message);
+            }
         }
 
         private IEnumerable<Bewerking> GetBewerkingen()

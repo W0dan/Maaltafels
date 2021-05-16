@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using LalenasFirstProject;
+using System.Linq;
 
 namespace Lalena.UI
 {
@@ -8,8 +8,13 @@ namespace Lalena.UI
     {
         private readonly List<(string, int)> _alleOefeningen = new List<(string, int)>();
 
-        public OefeningenLijst(IEnumerable<Bewerking> bewerkingen, IList<int> tafels)
+        public OefeningenLijst(IList<Bewerking> bewerkingen, IList<int> tafels)
         {
+            if (!bewerkingen.Any() || !tafels.Any())
+            {
+                throw new ArgumentException("Gelieve bewerkingen en tafels te selecteren !");
+            }
+
             foreach (var bewerking in bewerkingen)
                 switch (bewerking)
                 {
