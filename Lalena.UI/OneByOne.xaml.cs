@@ -107,6 +107,7 @@ namespace Lalena.UI
         private void UpdateProgress()
         {
             Progress.Value = _aantalGedaan;
+            ProgressLabel.Text = $"{_aantalGedaan + 1}/{_totaal}";
         }
 
         private void ToonPunten()
