@@ -1,0 +1,349 @@
+{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "Lalena.Api",
+    "version": "v1"
+  },
+  "paths": {
+    "/Oefeningen": {
+      "get": {
+        "tags": [
+          "Oefeningen"
+        ],
+        "parameters": [
+          {
+            "name": "Bewerkingen",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "nullable": true
+            }
+          },
+          {
+            "name": "Tafels",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "nullable": true
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/GetOefeningenResponse"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GetOefeningenResponse"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GetOefeningenResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/Resultaten": {
+      "post": {
+        "tags": [
+          "Resultaten"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SaveResultaatRequest"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SaveResultaatRequest"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/SaveResultaatRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Success"
+          }
+        }
+      },
+      "get": {
+        "tags": [
+          "Resultaten"
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/Response"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Response"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Response"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/Resultaten/{id}": {
+      "get": {
+        "tags": [
+          "Resultaten"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/GetResultaatResponse"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GetResultaatResponse"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GetResultaatResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "Oefening": {
+        "type": "object",
+        "properties": {
+          "opgave": {
+            "type": "string",
+            "nullable": true
+          },
+          "resultaat": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "additionalProperties": false
+      },
+      "GetOefeningenResponse": {
+        "type": "object",
+        "properties": {
+          "oefeningen": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Oefening"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "SaveResultaatFout": {
+        "type": "object",
+        "properties": {
+          "opgave": {
+            "type": "string",
+            "nullable": true
+          },
+          "correctAntwoord": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "ingevuldAntwoord": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "additionalProperties": false
+      },
+      "SaveResultaatRequest": {
+        "type": "object",
+        "properties": {
+          "tafels": {
+            "type": "array",
+            "items": {
+              "type": "integer",
+              "format": "int32"
+            },
+            "nullable": true
+          },
+          "bewerkingen": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "nullable": true
+          },
+          "doorWie": {
+            "type": "string",
+            "nullable": true
+          },
+          "punten": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "maxTeBehalen": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "fouten": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/SaveResultaatFout"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "Resultaat": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "doorWie": {
+            "type": "string",
+            "nullable": true
+          },
+          "wanneer": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "tafels": {
+            "type": "string",
+            "nullable": true
+          },
+          "bewerkingen": {
+            "type": "string",
+            "nullable": true
+          },
+          "punten": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "maxTeBehalen": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "additionalProperties": false
+      },
+      "Response": {
+        "type": "object",
+        "properties": {
+          "resultaten": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Resultaat"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "GetResultaatFout": {
+        "type": "object",
+        "properties": {
+          "opgave": {
+            "type": "string",
+            "nullable": true
+          },
+          "correctAntwoord": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "ingevuldAntwoord": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "additionalProperties": false
+      },
+      "GetResultaatResponse": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "doorWie": {
+            "type": "string",
+            "nullable": true
+          },
+          "wanneer": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "tafels": {
+            "type": "string",
+            "nullable": true
+          },
+          "bewerkingen": {
+            "type": "string",
+            "nullable": true
+          },
+          "punten": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "maxTeBehalen": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "fouten": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/GetResultaatFout"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      }
+    }
+  }
+}

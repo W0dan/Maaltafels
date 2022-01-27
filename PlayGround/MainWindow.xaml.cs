@@ -36,8 +36,8 @@ namespace PlayGround
 
             try
             {
-                var left = int.Parse(Left.Text);
-                var right = int.Parse(Right.Text);
+                var left = int.Parse(LeftPanel.Text);
+                var right = int.Parse(RightPanel.Text);
                 var total = int.Parse(Total.Text);
 
                 if (left + right > total)

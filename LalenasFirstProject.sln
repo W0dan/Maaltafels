@@ -1,13 +1,25 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.30711.63
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LalenasFirstProject", "LalenasFirstProject\LalenasFirstProject.csproj", "{3854C20E-0B91-4D45-B0CB-723143B652D8}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lalena.UI", "Lalena.UI\Lalena.UI.csproj", "{8E945BA1-B905-4509-8A5D-488A006CFE83}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PlayGround", "PlayGround\PlayGround.csproj", "{E5734906-7D71-40F9-B0F7-41A38033893A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PlayGround", "PlayGround\PlayGround.csproj", "{E5734906-7D71-40F9-B0F7-41A38033893A}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lalena.Domain", "Lalena.Domain\Lalena.Domain.csproj", "{855999CA-5169-41AC-A1CE-ABC139C791EB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lalena.Api", "Lalena.Api\Lalena.Api.csproj", "{17201524-6F53-476D-86F9-84E1377EF60F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lalena.Application.Write", "Lalena.Application.Write\Lalena.Application.Write.csproj", "{CDE9E83A-A6B6-488D-90B0-9851F0670B8B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lalena.Application.Read", "Lalena.Application.Read\Lalena.Application.Read.csproj", "{86E7DA40-F61F-4F8E-B85D-27C581BF3BA7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lalena.Database", "Lalena.Database\Lalena.Database.csproj", "{05D92254-9142-4C5A-B48D-B4BBA7FB336E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lalena.Migrations", "Lalena.Migrations\Lalena.Migrations.csproj", "{35AC4AF1-D61C-49C9-8613-C8E9C7D64E98}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,6 +39,30 @@ Global
 		{E5734906-7D71-40F9-B0F7-41A38033893A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E5734906-7D71-40F9-B0F7-41A38033893A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E5734906-7D71-40F9-B0F7-41A38033893A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{855999CA-5169-41AC-A1CE-ABC139C791EB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{855999CA-5169-41AC-A1CE-ABC139C791EB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{855999CA-5169-41AC-A1CE-ABC139C791EB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{855999CA-5169-41AC-A1CE-ABC139C791EB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{17201524-6F53-476D-86F9-84E1377EF60F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{17201524-6F53-476D-86F9-84E1377EF60F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{17201524-6F53-476D-86F9-84E1377EF60F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{17201524-6F53-476D-86F9-84E1377EF60F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CDE9E83A-A6B6-488D-90B0-9851F0670B8B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CDE9E83A-A6B6-488D-90B0-9851F0670B8B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CDE9E83A-A6B6-488D-90B0-9851F0670B8B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CDE9E83A-A6B6-488D-90B0-9851F0670B8B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{86E7DA40-F61F-4F8E-B85D-27C581BF3BA7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{86E7DA40-F61F-4F8E-B85D-27C581BF3BA7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{86E7DA40-F61F-4F8E-B85D-27C581BF3BA7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{86E7DA40-F61F-4F8E-B85D-27C581BF3BA7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{05D92254-9142-4C5A-B48D-B4BBA7FB336E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{05D92254-9142-4C5A-B48D-B4BBA7FB336E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{05D92254-9142-4C5A-B48D-B4BBA7FB336E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{05D92254-9142-4C5A-B48D-B4BBA7FB336E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{35AC4AF1-D61C-49C9-8613-C8E9C7D64E98}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{35AC4AF1-D61C-49C9-8613-C8E9C7D64E98}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{35AC4AF1-D61C-49C9-8613-C8E9C7D64E98}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{35AC4AF1-D61C-49C9-8613-C8E9C7D64E98}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

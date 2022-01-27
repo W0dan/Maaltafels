@@ -1,0 +1,27 @@
+.checkIcon {
+  color: green;
+  opacity: 0.75;
+  cursor: pointer;
+}
+
+.checkIcon:hover {
+  opacity: 1;
+  cursor: pointer;
+}
+
+.oefeningOpgave {
+  font-size: xx-large;
+  vertical-align: middle;
+}
+.oefeningResultaat {
+  font-size: x-large;
+}
+
+.oefeningPreviousNext {
+  font-size: x-large !important;
+  font-weight: 500;
+  opacity: 0.5;
+  height: 50px;
+  vertical-align: middle;
+  text-align: center;
+}

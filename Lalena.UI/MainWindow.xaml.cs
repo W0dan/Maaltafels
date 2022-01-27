@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Windows;
+using Lalena.Domain;
+using Lalena.Domain.Oefeningen;
 
 namespace Lalena.UI
 {
