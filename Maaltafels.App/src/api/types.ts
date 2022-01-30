@@ -20,7 +20,7 @@ type ExportedTypes = {
 };
 
 export function GetClient() {
-  return clientFor<paths>()("https://192.168.1.137:5001", "application/json");
+  return clientFor<paths>()("http://192.168.1.132:5000", "application/json");
 }
 
 export type GetOefeningenResponse = ExportedTypes["GetOefeningenResponse"];
