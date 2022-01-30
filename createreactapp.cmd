@@ -1,1 +1,0 @@
-npx create-react-app lalena.app --use-npm --template typescript
