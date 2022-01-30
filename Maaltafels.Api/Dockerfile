@@ -4,8 +4,9 @@ WORKDIR /app
 COPY . ./
 RUN dotnet publish Maaltafels.Api -c Release -o out
 
-FROM mcr.microsoft.com/dotnet/runtime:6.0
+FROM mcr.microsoft.com/dotnet/aspnet:6.0
 WORKDIR /app
-COPY --from=build-env Maaltafels.Api/out .
+COPY --from=build-env /app/out .
 
-ENTRYPOINT ["dotnet", "Maaltafels.Api.exe"]
+EXPOSE 5000
+ENTRYPOINT ["dotnet", "Maaltafels.Api.dll"]
