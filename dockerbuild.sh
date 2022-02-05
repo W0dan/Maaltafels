@@ -1,3 +1,4 @@
 docker build -f Maaltafels.Api/Dockerfile -t maaltafelsapi .
 
-docker build -f Maaltafels.App/Dockerfile -t maaltafelsapp .
+cd Maaltafels.App
+docker build -f Dockerfile -t maaltafelsapp .
