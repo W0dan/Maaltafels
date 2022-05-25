@@ -7,6 +7,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SolutionItems", "SolutionIt
 	ProjectSection(SolutionItems) = preProject
 		.gitignore = .gitignore
 		.dockerignore = .dockerignore
+		dockerbuild.sh = dockerbuild.sh
+		dockersave.sh = dockersave.sh
 	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Maaltafels.Api", "Maaltafels.Api\Maaltafels.Api.csproj", "{F1091262-C6A8-48B3-AB6C-3384DCE50D92}"

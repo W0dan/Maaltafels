@@ -1,6 +1,6 @@
 import {useState} from "react";
 import {useQuery} from "react-query";
-import {GetClient, Oefening} from "./../api/types";
+import {GetClient, Oefening} from "../api/types";
 
 import CheckIcon from "@material-ui/icons/CheckCircleOutline";
 import WrongIcon from "@material-ui/icons/Error";
@@ -123,6 +123,9 @@ export function Oefeningen({
         }
     }
 
+    const percentDone = currentOefeningIndex / oefeningenCount * 100;
+    const percentTodo = 100 - percentDone;
+
     return (
         <>
             <Grid
@@ -208,6 +211,22 @@ export function Oefeningen({
                             {previousOefening.opgave} {previousOefening.resultaat}
                         </>
                     )}
+                </Grid>
+            </Grid>
+            <Grid
+                container
+                className={styles.theContainer}
+                style={{
+                    alignContent: "center",
+                    verticalAlign: "middle",
+                    textAlign: "center",
+                    paddingLeft: "2em",
+                    paddingRight: "2em",
+                }}
+            >
+                <Grid item xs={12} style={{border: "1px solid #808080"}}>
+                    <div style={{backgroundColor: "#00CC00", width: `${percentDone}%`, height: "100%", display: "inline-block"}}>&nbsp;<br />&nbsp;</div>
+                    <div style={{backgroundColor: "#EEEEEE", width: `${percentTodo}%`, height: "100%", display: "inline-block"}}>&nbsp;<br />&nbsp;</div>    
                 </Grid>
             </Grid>
         </>
